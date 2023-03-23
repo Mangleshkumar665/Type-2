@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Result from "./Result";
+import {useSelector} from 'react-redux'
 
 export default function TextForm(props) {
+  
+  // time selection redux logic 
+
+
+  const selectedTime = useSelector((state)=>state.time);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   // logic for output
 
   // counter logic
@@ -13,11 +29,13 @@ export default function TextForm(props) {
     setResultDisplay(value);
   }
 
+
+
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     let interval;
-    let final = 15;
+    
     if (isRunning) {
       interval = setInterval(() => {
         setTime((time) => time + 1);
@@ -32,11 +50,10 @@ export default function TextForm(props) {
 
   // wpm calculations
   const wpmCalculations = (text, errorNo) => {
-    console.log();
     let wpm =
-      Math.floor(
-        text.split(" ").filter((element) => element !== "").length - errorNo
-      ) * 4;
+      
+        Math.floor(((text.split(" ").filter((element) => element !== "").length - errorNo)*60 )/selectedTime)
+      ;
     return wpm;
   };
 
@@ -74,11 +91,11 @@ export default function TextForm(props) {
     alertDisplay()
 
   }, [])
-  
+  console.log( selectedTime)
 
   return (
     <>
-      {time <= 15 ? (
+      {time <= selectedTime ? (
         <div className="">
           <div className="  ">
             <h2>
@@ -98,7 +115,6 @@ export default function TextForm(props) {
                 </a>
               </div>
             </div>
-
             <div
               className="mb-3 textAreapos"
               style={{ width: "30vw", margin: "20px" }}

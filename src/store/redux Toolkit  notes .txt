@@ -1,0 +1,42 @@
+redux notes --- 
+
+
+npm install @reduxjs/toolkit react-redux 
+
+
+
+1- create a slice which will hold all the reducers 
+
+
+
+
+2- create store.js in the store folder
+
+3- wrap the app.js with the <Provider store= {store} > </Provider> 
+
+
+
+4 - importing the actions form the store in the OptionsBar component 
+
+import {select} from '../store/store' 
+
+calling the action select which will call the reducer that will chnage the state . 
+
+5 - to dispatch action we require a hook called as useDispatch()
+    
+    const dispatch = useDispatch();
+
+
+6- create a fxn whichi will handle dispatch - 
+ex - 
+    const handleSelect = (time) =>{
+        dispatch(select(time))
+    }
+
+
+all done -- now getting the stored data . 
+
+
+7 -we use  useSelector to get the stored data . 
+
+

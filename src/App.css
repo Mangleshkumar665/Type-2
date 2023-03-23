@@ -41,3 +41,9 @@
   list-style-type:"";
   /* border: 2px solid rgb(144, 144, 144) ; */
 }
+
+
+.btn-selected{
+  background-color: rgb(198, 40, 40);
+}
+

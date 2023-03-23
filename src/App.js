@@ -1,13 +1,15 @@
 import "./App.css";
 import TextForm from "./components/TextForm";
-
+import store from "./store/store"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Result from "./components/Result";
 import OptionsBar from "./components/OptionsBar";
+
+import {Provider} from "react-redux"
 
 function App() {
   return (
     <>
+    <Provider store={store}>
       <Router>
         <div className="d-flex justify-content-center ">
           <div className=" display-1">
@@ -27,6 +29,7 @@ function App() {
           
         </Routes>
       </Router>
+      </Provider>
     </>
   );
 }

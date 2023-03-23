@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
+import {select} from '../store/timerSlice' // calling the action select which will call the reducer that will chnage the state . 
+
+import {useDispatch,useSelector} from 'react-redux'
 
 const OptionsBar = () => {  
 
-    const [time, setTime] = useState(15);
+    const dispatch = useDispatch();
+
+    const handleSelect = (time) =>{
+        dispatch(select(time))
+    }
 
 
-    const timeSelection = ()=>{
 
-    } 
+
+
     return (
         <>
             <div className='option-bar-head'>
@@ -16,21 +22,21 @@ const OptionsBar = () => {
                         <div className=' option-bar-caption '> Time : </div>
                         
                         <li className=' mx-1 option-btn  '  >
-                            <input type="button" value="15 S" className=' btn  ' onClick={()=>setTime(15)} />
+                            <input type="button" value="15 S"   onClick={()=>handleSelect(15)} />
                         </li>
 
                         <li className=' mx-1 option-btn ' >
-                            <input type="button" value="30 S" className=' btn  ' onClick={()=>setTime(30)}/>
+                            <input type="button" value="30 S"  onClick={()=>handleSelect(30)}  />
                         </li>
 
                         <li className=' mx-1 option-btn ' >
-                            <input type="button" value="45 S" className=' btn  ' onClick={()=>setTime(45)} />
+                            <input type="button" value="45 S" onClick={()=>handleSelect(45)} />
                         </li>
 
                         <li className=' mx-1 option-btn ' >
-                        <input type="button" value="60 S" className=' btn'onClick={()=>setTime(60)} /> 
+                        <input type="button" value="60 S"  onClick={()=>handleSelect(60)} /> 
                         </li>
-                        {console.log(time)}
+                     
                     </ul>
 
 
