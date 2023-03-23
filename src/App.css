@@ -4,6 +4,40 @@
   border: 2px solid red ;
 }
 
+.option-btn{
+  border: 2px solid grey ;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: rgb(169, 203, 218);
+  
+}
 
-textarea{
+.options-bar{
+  border: 2px solid rgb(144, 144, 144) ;
+  
+  border-radius: 5px;
+}
+.option-btn:hover{
+  background-color: rgb(255, 255, 255);
+}
+
+.option-bar-caption{
+
+  font-size: 25px;
+  margin-top: 5px;
+  color: rgb(84, 84, 84);
+
+}
+.option-bar-head{
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+.option-btns-wrapper{
+  position: relative;
+  left: 50px;
+  width: fit-content;
+  
+  list-style-type:"";
+  /* border: 2px solid rgb(144, 144, 144) ; */
 }

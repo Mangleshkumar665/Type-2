@@ -17,13 +17,11 @@ export default function TextForm(props) {
 
   useEffect(() => {
     let interval;
-
+    let final = 15;
     if (isRunning) {
       interval = setInterval(() => {
         setTime((time) => time + 1);
-        if (time === 10) {
-          clearInterval(interval);
-        }
+        
       }, 1000);
     }
     return () => {
@@ -56,6 +54,7 @@ export default function TextForm(props) {
 
   // textarea ---------------------------------------
   const [text, setText] = useState("");
+  const [alert, setAlert] = useState("")
 
   const [errorNo, setErrorNo] = useState(0);
 
@@ -64,36 +63,65 @@ export default function TextForm(props) {
     errors(event.target.value.split(" "));
   };
 
+  const alertDisplay = ()=>{
+
+    setTimeout(() => {
+      setAlert("d-none")
+    }, 5000);
+
+  }
+  useEffect(() => {
+    alertDisplay()
+
+  }, [])
+  
+
   return (
     <>
-    { time <=15?
-      <div className="">
-        <div>
-          <h2>
+      {time <= 15 ? (
+        <div className="">
+          <div className="  ">
+            <h2>
               <span className="badge bg-secondary">Timer {time}</span>
-            
-            
-          </h2>
-        </div>
-
-        <div className=" d-flex    flex-wrap    ">
-          <div className="card " style={{width:"50vw",margin:"20px"}}>
-            <div className="card-body">
-              <h4 className="card-title" >Passage</h4>
-              <h5 className="card-subtitle mb-2 text-muted">#1</h5>
-              <p className="card-text" > {props.textVal}</p>
-
-              <a href="/" className="card-link">
-                Change
-              </a>
-            </div>
+            </h2>
           </div>
 
-          <div className="mb-3 textAreapos" style={{width:"30vw",margin:"20px"}}>
-            <label htmlFor="exampleFormControlTextarea1" className="form-label">
-              
-            </label>
-            
+          <div className=" d-flex    flex-wrap    ">
+            <div className="card " style={{ width: "50vw", margin: "20px" }}>
+              <div className="card-body">
+                <h4 className="card-title">Passage</h4>
+                <h5 className="card-subtitle mb-2 text-muted">#1</h5>
+                <p className="card-text"> {props.textVal}</p>
+
+                <a href="/" className="card-link">
+                  Change
+                </a>
+              </div>
+            </div>
+
+            <div
+              className="mb-3 textAreapos"
+              style={{ width: "30vw", margin: "20px" }}
+            >
+              <div
+                className={`alert alert-warning alert-dismissible fade show ${alert} `}
+                role="alert"
+              >
+                Click below to start the timer 
+                <button
+                  type="button"
+                  className="btn close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <label
+                htmlFor="exampleFormControlTextarea1"
+                className="form-label"
+              ></label>
+
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"
@@ -103,33 +131,49 @@ export default function TextForm(props) {
                 spellCheck="false"
                 placeholder="start typing here !!"
                 onClick={() => setIsRunning(true)}
-                style={{resize:"none"}}
+                style={{ resize: "none" }}
               ></textarea>
-            
-          </div>
+            </div>
 
-          <div className=" container my-3 d-flex ">
-            <h4 className="" style={{marginRight:"30px",padding:"10px",border:"1px solid grey",borderRadius:"5px"}} >
-              <strong> Words : </strong>{" "}
-              {text.split(" ").length -
-                text.split(" ").filter((words) => {
-                  return words === ""
-                }).length}
-            </h4>
-            
-            <h4 style={{color:"red",padding:"10px",border:"1px solid grey",borderRadius:"5px"}}>
-              <strong> Errors : </strong> {errorNo}
-            </h4>
+            <div className=" container my-3 d-flex ">
+              <h4
+                className=""
+                style={{
+                  marginRight: "30px",
+                  padding: "10px",
+                  border: "1px solid grey",
+                  borderRadius: "5px",
+                }}
+              >
+                <strong> Words : </strong>{" "}
+                {text.split(" ").length -
+                  text.split(" ").filter((words) => {
+                    return words === "";
+                  }).length}
+              </h4>
+
+              <h4
+                style={{
+                  color: "red",
+                  padding: "10px",
+                  border: "1px solid grey",
+                  borderRadius: "5px",
+                }}
+              >
+                <strong> Errors : </strong> {errorNo}
+              </h4>
+            </div>
           </div>
         </div>
-      </div> :<Result
-        errorNo={errorNo}
-        text={text}
-        wpm={wpmCalculations(text, errorNo)}
-        count={count}
-        resdisplay={resdisplay}
-      />}
-      
+      ) : (
+        <Result
+          errorNo={errorNo}
+          text={text}
+          wpm={wpmCalculations(text, errorNo)}
+          count={count}
+          resdisplay={resdisplay}
+        />
+      )}
     </>
   );
 }

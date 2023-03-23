@@ -3,6 +3,7 @@ import TextForm from "./components/TextForm";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Result from "./components/Result";
+import OptionsBar from "./components/OptionsBar";
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
             (TYPE)<sup>2</sup>
           </div>
         </div>
+
+        <OptionsBar />
         <Routes>
+
           <Route
             path="/"
             element={
