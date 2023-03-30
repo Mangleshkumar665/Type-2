@@ -4,7 +4,7 @@ const {createSlice} = require('@reduxjs/toolkit')
 const timerSlice = createSlice({
 
     name :"time",
-    initialState : 15,
+    initialState : [15],
     reducers:{
         select(state,action) {
             state.push(action.payload)

@@ -15,15 +15,9 @@ export default function Result(props) {
         </div>
 
         <button
-          className="btn  "
+          className="btn-restart   "
           onClick={() => Navigate(0)}
-          style={{
-            fontSize: "25px",
-            width: "15vw",
-            border: "1px solid grey",
-            backgroundColor: "grey",
-            color: "whitesmoke",
-          }}
+          
         >
           Restart
         </button>

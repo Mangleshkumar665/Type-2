@@ -52,7 +52,7 @@ export default function TextForm(props) {
   const wpmCalculations = (text, errorNo) => {
     let wpm =
       
-        Math.floor(((text.split(" ").filter((element) => element !== "").length - errorNo)*60 )/selectedTime)
+        Math.floor(((text.split(" ").filter((element) => element !== "").length - errorNo)*60 )/selectedTime[selectedTime.length-1])
       ;
     return wpm;
   };
@@ -91,32 +91,30 @@ export default function TextForm(props) {
     alertDisplay()
 
   }, [])
-  console.log( selectedTime)
+  
 
   return (
     <>
-      {time <= selectedTime ? (
+      {time <= selectedTime[selectedTime.length-1] ? (
         <div className="">
-          <div className="  ">
+          <div className=" mx-4 ">
             <h2>
-              <span className="badge bg-secondary">Timer {time}</span>
+              <span className="badge  btn-timer">Timer {time}</span>
             </h2>
           </div>
 
           <div className=" d-flex    flex-wrap    ">
             <div className="card " style={{ width: "50vw", margin: "20px" }}>
-              <div className="card-body">
+              <div className="card-body"style={{ boxShadow: "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px" }}>
                 <h4 className="card-title">Passage</h4>
-                <h5 className="card-subtitle mb-2 text-muted">#1</h5>
+                
                 <p className="card-text"> {props.textVal}</p>
 
-                <a href="/" className="card-link">
-                  Change
-                </a>
+                
               </div>
             </div>
             <div
-              className="mb-3 textAreapos"
+              className="mb-3"
               style={{ width: "30vw", margin: "20px" }}
             >
               <div
@@ -139,7 +137,7 @@ export default function TextForm(props) {
               ></label>
 
               <textarea
-                className="form-control"
+                className="form-control "
                 id="exampleFormControlTextarea1"
                 rows="8"
                 onChange={handleOnChange}
@@ -147,7 +145,8 @@ export default function TextForm(props) {
                 spellCheck="false"
                 placeholder="start typing here !!"
                 onClick={() => setIsRunning(true)}
-                style={{ resize: "none" }}
+                
+                style={{ boxShadow: "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px",resize: "none"  }}
               ></textarea>
             </div>
 
