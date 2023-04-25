@@ -61,6 +61,8 @@ export default function TextForm(props) {
   const errors = (varText) => {
     let totError = [];
     const originalText = props.textVal.split(" ");
+    
+    
     for (let i = 0; i < varText.length; i++) {
       if (originalText[i] !== text.split(" ")[i]) {
         totError.push(varText[i]);
@@ -106,9 +108,9 @@ export default function TextForm(props) {
           <div className=" d-flex    flex-wrap    ">
             <div className="card " style={{ width: "50vw", margin: "20px" }}>
               <div className="card-body"style={{ boxShadow: "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px" }}>
-                <h4 className="card-title">Passage</h4>
+                <h4 className="card-title" style={{fontWeight:"bolder", color:"#393939" }}>Passage</h4>
                 
-                <p className="card-text"> {props.textVal}</p>
+                <p className="card-text" style={{color:'#393939', fontSize:"1.2rem"}}> {props.textVal}</p>
 
                 
               </div>
@@ -146,7 +148,7 @@ export default function TextForm(props) {
                 placeholder="start typing here !!"
                 onClick={() => setIsRunning(true)}
                 
-                style={{ boxShadow: "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px",resize: "none"  }}
+                style={{ boxShadow: "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px",resize: "none" ,color:"#393939",fontSize:"1.2rem"  }}
               ></textarea>
             </div>
 

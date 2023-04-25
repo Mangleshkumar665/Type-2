@@ -13,7 +13,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="d-flex justify-content-center ">
-          <div className=" display-1 " style={{fontWeight:"400",color:"#245953"}}>
+          <div className=" display-1 " style={{fontWeight:"400",color:"#393939"}}>
             (TYPE)<sup>2</sup> 
           </div>
         </div>
