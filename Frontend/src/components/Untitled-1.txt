@@ -1,0 +1,75 @@
+
+
+import React, { useState } from 'react'
+import { useRef } from 'react';
+import Editor from '@monaco-editor/react';
+const Footer = () => {
+
+  let data = {
+    languages: ["java", "javascript", "python"],
+
+    langDetails: [
+      {
+        id: "1",
+        defaultLanguage: "java",
+        content: " Java Code here"
+      },
+      {
+        id: "2",
+        defaultLanguage: "javascript",
+        content: " JavaScript Code here"
+      },{
+        id: "3",
+        defaultLanguage: "python",
+        content: " Python Code here"
+      },
+    ]
+
+
+  }
+
+  const editorRef = useRef(null);
+
+
+  const [lang, setLang] = useState("java")
+
+  function handleEditorDidMount(editor, monaco) {
+    editorRef.current = editor;
+  }
+
+  function showValue() {
+    alert(editorRef.current.getValue());
+  }
+  const handleSelection = (event) => {
+    setLang(event.target.value)
+  }
+  console.log(lang, "sla")
+
+
+  return (
+    <footer>
+    {console.log(data.langDetails.find(element => element.defaultLanguage === lang).content,"chekcsai")}
+
+    
+      
+
+      <select onChange={handleSelection} >
+        {data.languages.map((element) =>
+          <option value={`${element}`}> {element}</option>
+        )}
+
+
+      </select>
+
+      <Editor
+        height="90vh"
+        path={`${data.langDetails.find(element => element.defaultLanguage === lang).id}`}
+        defaultLanguage={`${data.langDetails.find(element => element.defaultLanguage === lang).defaultLanguage}`}
+        defaultValue={`${data.langDetails.find(element => element.defaultLanguage === lang).content}`}
+        onMount={handleEditorDidMount}
+      />
+    </footer >
+  )
+}
+
+export default Footer

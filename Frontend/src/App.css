@@ -1,0 +1,143 @@
+
+
+
+body{
+  background-color:whitesmoke;
+}
+
+.options-bar {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  border-radius: 2px;
+  background-color: #393939;
+  
+  padding-top:5px ;
+  padding-bottom:5px ;
+
+
+}
+
+.option-btn:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.option-bar-caption {
+
+  
+  font-size: 25px;
+  margin-top: 5px;
+  color: #c7c7c7;
+  font-weight: bolder;
+  
+
+}
+
+.option-bar-head {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+
+
+}
+
+.option-btns-wrapper {
+  position: relative;
+  left: 50px;
+  width: fit-content;
+  
+  list-style-type: "";
+}
+.option-btn {
+  border: 1px solid #86626E;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #cbcbcb;
+  box-shadow: rgba(106, 106, 106, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  
+
+}
+
+.option-btn-imp{
+  font-weight: bold;
+  color: #343434;
+
+  font-size: large;
+}
+
+.btn-selected {
+  background-color: #da3333 ;
+  
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.btn-timer{
+  background-color: #da3333;
+  font-size: "25px";
+  width: "15vw";
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #53917E ;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  color: #3d3d40;
+}
+
+.btn-restart{
+  background-color: #26a2c4;
+  font-size: "25px";
+  width: "15vw";
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #53917E ;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  color: #34343e;
+}
+.btn-restart:hover{
+  background-color: #d1f7ff;
+  border: 1px solid #aff2ff;
+  
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+
+
+.card-body{
+  background-color: #e4e4e4;
+}
+.form-control{
+  background-color: #e4e4e4;
+
+}
+
+.alert{
+  background-color: #e4e4e4 !important;
+  border: 2px solid #e4e4e4 !important;
+  color: #4d4d4d !important;
+  font-weight: 400 !important;
+}
+.nav-btns-wrapper{
+  margin-right: 50px;
+  
+}
+
+.nav-btns{
+  color: rgb(221, 221, 221) !important;
+  border: 2px solid black;
+  background-color: rgb(222, 4, 4);
+  margin: 2px;
+  font-size: 1.4rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;  
+}
+
+.nav-btns:hover{
+  background-color:#343434 !important;
+}
+
+@media screen and (max-width: 400px) { 
+  
+
+
+
+}
